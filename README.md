@@ -22,7 +22,7 @@ Thus eliminating the need to do a completely do Guice to Spring Boot rewrite.
 
 Deployed to Pivotal Cloud Foundry (PCF) 
 
-[a link](https://conductor-server-boot-wrapper.cfapps.io/)
+[Sample Aapplication](https://conductor-server-boot-wrapper.cfapps.io/)
 
 This version is working with embedded MariaDB4J as Database than the in memory DynoDB.
 
