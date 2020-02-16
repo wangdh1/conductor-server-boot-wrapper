@@ -1,0 +1,50 @@
+spring:
+  application:
+    name: conductor-server-boot-wrapper
+  datasource:
+    driver-class-name: org.mariadb.jdbc.Driver
+    username: conductor
+    password: password
+server:
+  port: 0
+
+logging:
+  level:
+    root: info
+
+awaitTermination: 300
+
+## Comment this to use external mysql db
+wrapper_db: mariadb4j
+
+## Uncomment for wrapper_db=mariadb4j more customized / persistence data directory options - default : tmp random folder - Data lost on ever restart
+## For PERSISTENT data - use dataDir property
+mariaDB4j:
+  port: 3306
+  dataDir: ./data
+#  libDir: ./lib
+#  baseDir: ./base
+  maxConnections: 1000
+
+## Uncomment for wrapper_db=mariadb4j to give a schema name for conductor data persistence - default : conductor
+app:
+  mariaDB4j:
+    databaseName: conductor
+
+## Conductor MYSQL Configuration for Hikari DataSource
+db: mysql
+jdbc:
+#  url: ## Leave it commented for mariadb4j
+  username: ${spring.datasource.username}
+  password: ${spring.datasource.password}  
+conductor:
+  mysql:
+    connection:
+      timeout: 31536000
+      idle:
+        timeout: 31536000 
+      pool:
+        idle:
+          min: 2
+        size:
+          max: 10000

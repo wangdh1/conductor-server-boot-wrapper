@@ -1,0 +1,29 @@
+spring:
+  application:
+    name: conductor-server-boot-wrapper
+server:
+  port: 0
+
+logging:
+  level:
+    root: info
+
+awaitTermination: 300
+
+## Conductor MYSQL Configuration for Hikari DataSource
+db: mysql
+jdbc:
+  url: jdbc:mysql://localhost:3306/conductor
+  username: root
+  password: Root!23$  
+conductor:
+  mysql:
+    connection:
+      timeout: 31536000
+      idle:
+        timeout: 31536000 
+      pool:
+        idle:
+          min: 2
+        size:
+          max: 10000
